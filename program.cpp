@@ -32,7 +32,7 @@ void range (float amount, struct list item[])
 
 void menu() 
 {
-    printf("\tQC Soft Stock Management System\n\n"); 
+    printf("\tQC-Soft Stock Management System\n\n"); 
 	printf("l. Search on Price Range\n"); 
 	printf("2. Search on item name\n");
     printf("3. Add a product\n");
