@@ -4,5 +4,5 @@ This program will be a stock inventory interface for a shopkeeper and will featu
 2) A search by:
         i) price
         ii) name
-        iii) id
+        iii) id?
 3) a feature to be able to add or remove a product
