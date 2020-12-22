@@ -8,6 +8,7 @@ struct list
 {
     float price;
     char name[50];
+    int id;
 };
 
 float cost(char product[], struct list item[])
@@ -35,10 +36,11 @@ void menu()
     printf("\tQC-Soft Stock Management System\n\n"); 
 	printf("l. Search on Price Range\n"); 
 	printf("2. Search on item name\n");
-    printf("3. Add a product\n");
-    printf("4. Remove Product\n");
-    printf("5. Replace product\n"); 
-	printf("6. Exit \n"); 
+    printf("3. Search by ID\n");
+    printf("4. Add a product\n");
+    printf("5. Remove Product\n");
+    printf("6. Replace product\n"); 
+	printf("7. Exit \n"); 
 }
 
 int main()
