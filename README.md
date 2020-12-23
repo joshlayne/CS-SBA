@@ -6,4 +6,5 @@ This program will be a stock inventory interface for a shopkeeper at a minimart/
         ii) name
         iii) id?
         iv) quantity?
-3) a feature to be able to add or remove a product
+3) a feature to be able to add, remove or replace a product
+4) a feature to order stock

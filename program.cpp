@@ -8,6 +8,7 @@ struct list
 {
     float price;
     char name[50];
+    int quantity;
     int id;
 };
 
@@ -40,10 +41,16 @@ void menu()
     printf("4. Add a product\n");
     printf("5. Remove Product\n");
     printf("6. Replace product\n"); 
-	printf("7. Exit \n"); 
+    printf("7. Order a product\n");
+	printf("8. Exit \n"); 
 }
 
 int main()
 {
-  
+    struct list item[50] ={0}; 
+    
+    int amount = 0, tempamount;
+	int tempcounter;
+	int i, x;
+	char deleted[50];
 }
