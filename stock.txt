@@ -1,1 +1,15 @@
-
+1000 30 5.00 Sprite
+1001 30 5.50 Coca-Cola
+1002 30 7.00 Corona
+1003 30 2.00 Water
+1004 50 3.00 Lays
+1005 45 2.50 Tea-Times
+1006 20 4.50 Eclipse
+1007 25 5.00 Butter
+1008 10 6.00 Salt-Bread
+1009 5 7.00 PH-Milk
+1010 6 4.15 Cheese
+1011 3 3.10 PH-Juice
+1012 1 2.50 Turnover
+1013 8 6.00 Patties
+1014 4 8.00 Flour
