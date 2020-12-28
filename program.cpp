@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define AMOUNT 10
+#define AMOUNT 15
 
 struct list
 {
@@ -11,6 +11,41 @@ struct list
     int quantity;
     int id;
 };
+
+struct order
+{
+	char compName[30], itemName[50];
+	int quant;
+};
+struct order pending[10];
+
+int orderNum = 0;
+void ordering(struct order pending[])
+{
+	printf("What company would you like to order from?: ");
+	scanf(" %[^\n]s", pending[orderNum].compName);
+	printf("What item would you like to order?: ");
+	scanf(" %[^\n]s", pending[orderNum].itemName);
+	printf("How much of this item would you like to order?: ");
+	scanf(" %d", &pending[orderNum].quant);
+	printf("\nOrder succesful!\n");
+	system("pause");
+	system("cls");
+	orderNum++;
+}
+
+void seeOrders(struct order pending[])
+{
+	int i = 0;
+	for(i; i < orderNum; i++)
+	{
+		printf("Order #%d\n", i+1);
+		printf("Company: %s\nItem: %s\nQuantity: %d\n\n", pending[i].compName, pending[i].itemName, pending[i].quant);
+	}
+	system("pause");
+	system("cls");
+}
+
 
 float cost(char product[], struct list item[])
 {
@@ -63,6 +98,17 @@ int main()
 			exit(0);   
 	   }
 
+    for(i = 0; i < 50 && !feof(file1); i++) 
+	{
+		fscanf(file1, "%d", &item[i].id); 
+		fgetc(file1);
+		fscanf(file1, "%d", &item[i].quantity); 
+		fgetc(file1);
+		fscanf(file1, "%f", &item[i].price);
+		fgetc(file1);
+		fscanf(file1, "%[^\n]s",&item[i].name);
+	}
+
     menu();
     printf("\nPlease choose an option: ");
     scanf(" %d", option);
@@ -94,7 +140,13 @@ int main()
             break;
 
         case 7:
-            /* code */
+            int d;
+	        for (d = 0; d < 3; d++)
+            {
+                ordering(pending);
+                seeOrders(pending);
+            }
+
             break;
 
         case 8:
