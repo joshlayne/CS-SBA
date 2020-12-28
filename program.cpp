@@ -90,7 +90,7 @@ int main()
 	char deleted[50];
 
     FILE *file1 = fopen("stock.txt","r"); 
-	FILE *file2 = fopen("stock_temp.txt","w");
+	// FILE *file2 = fopen("stock_temp.txt","w"); // REACTIVATE WHEN PARTS ARE FULLY INTEGRATED
 
     if(!file1)
 	   {
