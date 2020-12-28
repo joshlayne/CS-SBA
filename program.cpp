@@ -54,13 +54,13 @@ int main()
 	int i, x;
 	char deleted[50];
 
-    FILE *file1 = fopen("menu.txt","r"); 
-	FILE *file2 = fopen("menu_temp.txt","w");
+    FILE *file1 = fopen("stock.txt","r"); 
+	FILE *file2 = fopen("stock_temp.txt","w");
 
     if(!file1)
 	   {
 	    	printf("File Cannot Be Opened"); 
-			exit(0);   // return 1; 
+			exit(0);   
 	   }
 
     menu();
