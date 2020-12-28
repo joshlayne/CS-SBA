@@ -111,7 +111,7 @@ int main()
 
     menu();
     printf("\nPlease choose an option: ");
-    scanf(" %d", option);
+    scanf(" %d", &option);
 
     switch (option)
     {
