@@ -66,4 +66,42 @@ int main()
     menu();
     printf("Please choose an option: ");
     scanf(" %d", option);
+
+    switch (option)
+    {
+        case 1:
+            /* code */
+            break;
+
+        case 2:
+            /* code */
+            break;
+
+        case 3:
+            /* code */
+            break;
+
+        case 4:
+            /* code */
+            break;
+
+        case 5:
+            /* code */
+            break;
+
+        case 6:
+            /* code */
+            break;
+
+        case 7:
+            /* code */
+            break;
+
+        case 8:
+            /* code */
+            break;
+        
+        default:
+            break;
+    }
 }
