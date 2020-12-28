@@ -98,10 +98,11 @@ int main()
             break;
 
         case 8:
-            /* code */
-            break;
+            printf(" Thank you, Have a great day!!");
+       		exit(0);
         
         default:
+            printf("Invalid entry");
             break;
     }
 }
