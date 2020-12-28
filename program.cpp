@@ -50,7 +50,20 @@ int main()
     struct list item[50] ={0}; 
     
     int amount = 0, tempamount;
-	int tempcounter;
+	int tempcounter, option;
 	int i, x;
 	char deleted[50];
+
+    FILE *file1 = fopen("menu.txt","r"); 
+	FILE *file2 = fopen("menu_temp.txt","w");
+
+    if(!file1)
+	   {
+	    	printf("File Cannot Be Opened"); 
+			exit(0);   // return 1; 
+	   }
+
+    menu();
+    printf("Please choose an option: ");
+    scanf(" %d", option);
 }
