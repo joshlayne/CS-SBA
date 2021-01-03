@@ -164,7 +164,7 @@ int main()
                 fprintf(file2, "%d %d %.2f %s\n", item[x].id, item[x].quantity, item[x].price, item[x].name);
             }
             fprintf(file2, "%d %d %.2f %s", addid, addquantity, addprice, addname);
-            ++amount;	
+            ++amount;
             
             fclose(file1);
             fclose(file2);
