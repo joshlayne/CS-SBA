@@ -112,7 +112,7 @@ int main()
                 {
                     fprintf(file2, "%d %d %.2f %s\n", item[x].id, item[x].quantity, item[x].price, item[x].name);
                 }
-            }
+            } 
             getchar();
             amount--;
             
