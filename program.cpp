@@ -100,7 +100,6 @@ int main()
     float money;
 
     FILE *file1 = fopen("stock.txt","r"); 
-	// FILE *file2 = fopen("stock_temp.txt","w"); // REACTIVATE WHEN PARTS ARE FULLY INTEGRATED
 
     if(!file1)
 	   {
@@ -139,6 +138,10 @@ int main()
         case 3:
             /* code */
             break;
+
+       /* case 4:
+             code 
+            break; */
 
         case 4:
         {
