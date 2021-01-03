@@ -199,6 +199,8 @@ int main()
             
             remove("stock.txt");
             rename("stock_temp.txt", "stock.txt");
+
+            break;
         }
 
         case 6:
@@ -244,6 +246,8 @@ int main()
             
             remove("stock.txt");
             rename("stock_temp.txt", "stock.txt");
+
+            break;
         }
 
         case 7:
