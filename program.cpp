@@ -126,7 +126,7 @@ int main()
     switch (option)
     {
         case 1:
-            printf(" Please enter your price range\n");
+            printf(" Please enter your price range: $");
        		scanf(" %f", &money);
        		range(money, item);
 
