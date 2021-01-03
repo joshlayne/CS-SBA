@@ -116,6 +116,9 @@ int main()
 		fscanf(file1, "%f", &item[i].price);
 		fgetc(file1);
 		fscanf(file1, "%[^\n]s",&item[i].name);
+	 
+	    if(item[i].price != 0)
+			amount++;
 	}
 
     menu();
