@@ -73,6 +73,7 @@ void menu()
 	printf("l. Search on Price Range\n"); 
 	printf("2. Search on item name\n");
     printf("3. Search by ID\n");
+  //printf("4. Search on Quantity Range\n"); 
     printf("4. Add a product\n");
     printf("5. Remove Product\n");
     printf("6. Replace product\n"); 
@@ -85,9 +86,18 @@ int main()
     struct list item[50] ={0}; 
     
     int amount = 0, tempamount;
-	int tempcounter, option;
+	int tempcounter;
 	int i, x;
-	char deleted[50];
+	char addname[50];
+	float addprice;
+	int addquantity, addid;
+    float reprice;
+    char replace[50], reName[50];
+	int reid, requantity;
+    char deleted[50];
+    int option;
+
+    float money;
 
     FILE *file1 = fopen("stock.txt","r"); 
 	// FILE *file2 = fopen("stock_temp.txt","w"); // REACTIVATE WHEN PARTS ARE FULLY INTEGRATED
@@ -116,7 +126,10 @@ int main()
     switch (option)
     {
         case 1:
-            /* code */
+            printf(" Please enter your price range\n");
+       		scanf(" %f", &money);
+       		range(money, item);
+
             break;
 
         case 2:
@@ -128,16 +141,104 @@ int main()
             break;
 
         case 4:
-            /* code */
-            break;
+        {
+            FILE *file2 = fopen("stock_temp.txt","w");
 
-        case 5:
-            /* code */
+            printf("%d Please enter the name of the item you wish to add: ", amount);
+            scanf(" %[^\n]s", addname);
+        
+            printf("Please enter the ID of the item you wish to add: ");
+            scanf(" %d", &addid);
+            
+            printf("Please enter how much of %s do you wish to add: ", addname);
+            scanf(" %d", &addquantity);
+            
+            printf("%d Please enter the price of the item you wish to add: ", amount);
+            scanf(" %f", &addprice);
+            
+            for (x = 0; x < amount; x++)
+            {
+                fprintf(file2, "%d %d %.2f %s\n", item[x].id, item[x].quantity, item[x].price, item[x].name);
+            }
+            fprintf(file2, "%d %d %.2f %s", addid, addquantity, addprice, addname);
+            ++amount;	
+            
+            fclose(file1);
+            fclose(file2);
+            
+            remove("stock.txt");
+            rename("stock_temp.txt", "stock.txt");
             break;
+        }
+        
+        case 5:
+        {
+            FILE *file2 = fopen("stock_temp.txt","w");
+
+            printf("%d Please enter the name of the item you wish to remove: ", amount);
+            scanf(" %[^\n]s", deleted);
+            
+            for (x = 0; x < amount; x++)
+            {
+                if (strcasecmp(deleted, item[x].name)!=0)
+                {
+                    fprintf(file2, "%d %d %.2f %s\n", item[x].id, item[x].quantity, item[x].price, item[x].name);
+                }
+            }
+            getchar();
+            amount--;
+            
+            fclose(file1);
+            fclose(file2);
+            
+            remove("stock.txt");
+            rename("stock_temp.txt", "stock.txt");
+        }
 
         case 6:
-            /* code */
-            break;
+        {
+            FILE *file2 = fopen("stock_temp.txt","w");
+
+            printf("%d Please enter the name of the item you wish to replace: ", amount);
+            scanf(" %[^\n]s", replace);
+            
+            printf("What do you want to replace %s with: ", replace);
+            scanf(" %[^\n]s", reName);
+            
+            printf("What is the ID of %s: ", reName);
+            scanf(" %d", &reid);
+            
+            printf("What is the quantity of %s: ", reName);
+            scanf(" %d", &requantity);
+            
+            printf("What is the price for %s: ", reName);
+            scanf(" %f", &reprice);
+            
+            
+            for (x = 0; x < amount; x++)
+            {
+                if (strcasecmp(replace, item[x].name)!=0)
+                {	
+                    fprintf(file2, "%d %d %.2f %s\n", item[x].id, item[x].quantity, item[x].price, item[x].name);
+                }
+                else
+                {
+                    strcpy(item[x].name, reName);
+                    item[x].price = reprice;
+                    item[x].id = reid;
+                    item[x].quantity = requantity;
+                    
+                    fprintf(file2, "%d %d %.2f %s\n", item[x].id, item[x].quantity, item[x].price, item[x].name);
+                }
+            }
+            //amount--;
+            
+            fclose(file1);
+            fclose(file2);
+            
+            remove("stock.txt");
+            rename("stock_temp.txt", "stock.txt");
+        }
 
         case 7:
             int d;
