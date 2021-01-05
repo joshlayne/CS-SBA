@@ -74,11 +74,11 @@ void menu()
 	printf("2. Search on item name\n");
     printf("3. Search by ID\n");
   //printf("4. Search on Quantity Range\n"); 
-    printf("4. Add a product\n");
-    printf("5. Remove Product\n");
-    printf("6. Replace product\n"); 
-    printf("7. Order a product\n");
-	printf("8. Exit \n"); 
+    printf("5. Add a product\n");
+    printf("6. Remove Product\n");
+    printf("7. Replace product\n"); 
+    printf("8. Order a product\n");
+	printf("9. Exit \n"); 
 }
 
 int main()
@@ -142,11 +142,11 @@ int main()
             /* code */
             break;
 
-       /* case 4:
-             code 
-            break; */
-
         case 4:
+            /* code */
+            break;
+
+        case 5:
         {
             FILE *file2 = fopen("stock_temp.txt","w");
 
@@ -177,7 +177,7 @@ int main()
             break;
         }
         
-        case 5:
+        case 6:
         {
             FILE *file2 = fopen("stock_temp.txt","w");
 
@@ -203,7 +203,7 @@ int main()
             break;
         }
 
-        case 6:
+        case 7:
         {
             FILE *file2 = fopen("stock_temp.txt","w");
 
@@ -250,7 +250,7 @@ int main()
             break;
         }
 
-        case 7:
+        case 8:
             int d;
 	        for (d = 0; d < 3; d++)
             {
@@ -260,7 +260,7 @@ int main()
 
             break;
 
-        case 8:
+        case 9:
             printf(" Thank you, Have a great day!!");
        		exit(0);
         
