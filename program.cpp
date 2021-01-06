@@ -61,10 +61,15 @@ float cost(char product[], struct list item[])
 
 void range (float amount, struct list item[])
 {
-    int index; 
-    for (index=0;index<AMOUNT;index++) 
-         if (item[index].price <= amount) 
-                printf("%s $%4.2f\n",item[index].name, item[index].price); 
+    int i; 
+    for (i = 0; i < AMOUNT; i++) 
+    {
+        if (item[i].price <= amount) 
+        {
+            printf("%s $%4.2f $%d $%d\n", item[i].name, item[i].price, item[i].id, item[i].quantity);
+        }
+    }
+          
 }
 
 void menu() 
@@ -73,7 +78,7 @@ void menu()
 	printf("l. Search on Price Range\n"); 
 	printf("2. Search on item name\n");
     printf("3. Search by ID\n");
-    printf("4. Search on Quantity Range\n"); 
+   printf("4. Search on Quantity Range\n"); 
     printf("5. Add a product\n");
     printf("6. Remove Product\n");
     printf("7. Replace product\n"); 
