@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define AMOUNT 15
+#define AMOUNT 50
 
 struct list
 {
@@ -54,7 +54,7 @@ void cost(char product[], struct list item[])
        {
 	   
 			if (strcasecmp(product, item[i].name)==0) 
-				printf("%s $%4.2f $%d $%d\n", item[i].name, item[i].price, item[i].id, item[i].quantity); 
+				printf("%s $%4.2f %d %d\n", item[i].name, item[i].price, item[i].id, item[i].quantity); 
 	   }
 	//return 0.0;
 }
@@ -66,7 +66,7 @@ void range (float amount, struct list item[])
     {
         if (item[i].price <= amount) 
         {
-            printf("%s $%4.2f $%d $%d\n", item[i].name, item[i].price, item[i].id, item[i].quantity);
+            printf("%s $%4.2f %d %d\n", item[i].name, item[i].price, item[i].id, item[i].quantity);
         }
     }
           
@@ -79,7 +79,7 @@ void ident (int idnum, struct list item[])
        {
 			if (idnum = item[i].id) 
             {
-				printf("%s $%4.2f $%d $%d\n", item[i].name, item[i].price, item[i].id, item[i].quantity); 
+				printf("%s $%4.2f %d %d\n", item[i].name, item[i].price, item[i].id, item[i].quantity); 
             }
 	   }
 	//return 0.0; 
