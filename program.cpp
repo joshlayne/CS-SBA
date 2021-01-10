@@ -78,7 +78,7 @@ void menu()
 	printf("l. Search on Price Range\n"); 
 	printf("2. Search on item name\n");
     printf("3. Search by ID\n");
-   printf("4. Search on Quantity Range\n"); 
+    printf("4. Search on Quantity Range\n"); 
     printf("5. Add a product\n");
     printf("6. Remove Product\n");
     printf("7. Replace product\n"); 
