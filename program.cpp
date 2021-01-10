@@ -47,16 +47,16 @@ void seeOrders(struct order pending[])
 }
 
 
-float cost(char product[], struct list item[])
+void cost(char product[], struct list item[])
 {
     int i; 
     for (i=0;i<AMOUNT;i++) 
        {
 	   
 			if (strcasecmp(product, item[i].name)==0) 
-				return printf("%s $%4.2f $%d $%d\n", item[i].name, item[i].price, item[i].id, item[i].quantity); 
+				printf("%s $%4.2f $%d $%d\n", item[i].name, item[i].price, item[i].id, item[i].quantity); 
 	   }
-	return 0.0;
+	//return 0.0;
 }
 
 void range (float amount, struct list item[])
