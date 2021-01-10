@@ -49,12 +49,12 @@ void seeOrders(struct order pending[])
 
 float cost(char product[], struct list item[])
 {
-    int index; 
-    for (index=0;index<AMOUNT;index++) 
+    int i; 
+    for (i=0;i<AMOUNT;i++) 
        {
 	   
-			if (strcasecmp(product, item[index].name)==0) 
-				return item[index].price; 
+			if (strcasecmp(product, item[i].name)==0) 
+				return printf("%s $%4.2f $%d $%d\n", item[i].name, item[i].price, item[i].id, item[i].quantity); 
 	   }
 	return 0.0;
 }
@@ -70,6 +70,19 @@ void range (float amount, struct list item[])
         }
     }
           
+}
+
+void ident (int idnum, struct list item[]) 
+{
+    int i; 
+    for (i = 0; i < AMOUNT; i++) 
+       {
+			if (idnum = item[i].id) 
+            {
+				printf("%s $%4.2f $%d $%d\n", item[i].name, item[i].price, item[i].id, item[i].quantity); 
+            }
+	   }
+	//return 0.0; 
 }
 
 void menu() 
@@ -140,11 +153,21 @@ int main()
             break;
 
         case 2:
-            /* code */
+            char product[50];
+            
+            printf("Enter the name of the product\n");
+       		 scanf(" %[^\n]s",product); // gets(product);
+       		 cost(product, item);
+
+       		 break;
             break;
 
         case 3:
-            /* code */
+            int id;
+
+            printf("Enter the ID number of the product: \n");
+            scanf(" %f", &id);
+            ident(id, item);
             break;
 
         case 4:
