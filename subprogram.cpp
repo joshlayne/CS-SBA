@@ -147,6 +147,7 @@ int main()
 	{
 		system("cls");
 		menu();
+        printf("\nPlease choose an option: ");
 		scanf("%d", &option);
 		
 		switch(option)
